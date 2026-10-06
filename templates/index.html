@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GlowCart — Your AI Beauty Counter</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<div id="mode-banner" class="mode-banner hidden"></div>
+
+<main class="column">
+  <header class="hero">
+    <h1>GlowCart</h1>
+    <p class="tagline">Snap a selfie. <em>Know your skin.</em> Shop what actually works.</p>
+  </header>
+
+  <nav class="tabs">
+    <button class="tab active" data-tab="skin">Skin Analysis</button>
+    <button class="tab" data-tab="tryon">Try-On Studio</button>
+  </nav>
+
+  <!-- ============ SKIN TAB ============ -->
+  <section id="tab-skin">
+    <div class="card" id="upload-card">
+      <h2>1 · Analyze your skin</h2>
+      <p class="hint">A clear, front-facing selfie with even lighting works best. Your photo is analyzed and never stored.</p>
+      <label class="upload" for="selfie-input">
+        <span class="upload-cta">Choose a selfie</span>
+        <span class="upload-sub">JPG or PNG, up to 8 MB</span>
+      </label>
+      <input type="file" id="selfie-input" accept="image/jpeg,image/png" class="hidden-input">
+      <div id="selfie-preview-wrap" class="hidden">
+        <img id="selfie-preview" alt="Your selfie preview">
+      </div>
+      <button id="analyze-btn" class="primary" disabled>Analyze my skin →</button>
+      <p id="analyze-error" class="error hidden"></p>
+      <div id="analyze-progress" class="hidden"><span class="spinner"></span><span id="analyze-progress-text">Analyzing…</span></div>
+    </div>
+
+    <div id="report" class="hidden">
+      <p id="report-demo-note" class="demo-note hidden"></p>
+      <div class="card">
+        <h2>Your skin report <span id="skin-type" class="pill"></span></h2>
+        <div class="score-hero">
+          <div><span class="score-hero-num" id="skin-score">–</span><span class="score-hero-label">Skin score</span></div>
+          <p class="hint" id="skin-score-note"></p>
+        </div>
+        <h3>Focus areas</h3>
+        <div id="focus-list"></div>
+        <h3>All concerns</h3>
+        <div id="score-grid"></div>
+      </div>
+
+      <div class="card">
+        <h2>2 · Matched to your skin</h2>
+        <p class="hint">Sample catalog for demo — illustrative products and indicative prices.</p>
+        <div id="product-grid" class="product-grid"></div>
+      </div>
+
+      <div class="card">
+        <h2>3 · Your routine</h2>
+        <p class="hint">Tick products to build your AM / PM routine.</p>
+        <div id="routine-picker"></div>
+        <button id="routine-btn" class="primary">Build my routine →</button>
+        <div id="routine-out" class="hidden">
+          <div class="routine-cols">
+            <div><h3>Morning</h3><ol id="routine-am"></ol></div>
+            <div><h3>Night</h3><ol id="routine-pm"></ol></div>
+          </div>
+          <p class="total">Routine total: <strong id="routine-total"></strong></p>
+        </div>
+      </div>
+
+      <button id="reset-btn" class="secondary">↺ Analyze another selfie</button>
+    </div>
+  </section>
+
+  <!-- ============ TRY-ON TAB ============ -->
+  <section id="tab-tryon" class="hidden">
+    <div class="card">
+      <h2>Apparel virtual try-on</h2>
+      <p class="hint">Upload a full-body or upper-body photo of yourself plus a garment photo — YouCam's cloth-v4 renders the outfit on you.</p>
+      <div class="two-col">
+        <div>
+          <label class="upload small" for="person-input"><span class="upload-cta">Your photo</span></label>
+          <input type="file" id="person-input" accept="image/jpeg,image/png" class="hidden-input">
+          <img id="person-preview" class="thumb hidden" alt="Person preview">
+        </div>
+        <div>
+          <label class="upload small" for="garment-input"><span class="upload-cta">Garment photo</span></label>
+          <input type="file" id="garment-input" accept="image/jpeg,image/png" class="hidden-input">
+          <img id="garment-preview" class="thumb hidden" alt="Garment preview">
+        </div>
+      </div>
+      <button id="tryon-btn" class="primary" disabled>Try it on →</button>
+      <p id="tryon-error" class="error hidden"></p>
+      <div id="tryon-progress" class="hidden"><span class="spinner"></span><span>Rendering try-on… (AI takes ~30s)</span></div>
+      <div id="tryon-out" class="hidden">
+        <p id="tryon-demo-note" class="demo-note hidden"></p>
+        <img id="tryon-result" class="result-img hidden" alt="Try-on result">
+        <p id="tryon-note" class="hint"></p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>GlowCart is a demo shopping experience — sample catalog, illustrative prices. AI results are for reference only, not medical or dermatological advice.</p>
+  </footer>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
