@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GlowCart — Interactive Showcase (simulated)</title>
+<style>
+  :root { --paper:#fdf6f0; --ink:#241a14; --muted:#8a7a6d; --rose:#c2437e; --card:#fff; --line:#f0e2d6; --amber-bg:#fef3c7; --green:#15803d; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--paper); color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; line-height:1.6; }
+  .column { max-width:760px; margin:0 auto; padding:2rem 1.25rem 4rem; }
+  .sim-banner { background:var(--amber-bg); color:#92400e; text-align:center; font-size:.85rem;
+    padding:.6rem 1rem; border-bottom:1px solid #f5d78e; }
+  h1 { font-family:Georgia,serif; font-size:2.4rem; text-align:center; margin:1rem 0 .25rem; }
+  .tagline { text-align:center; color:var(--muted); margin:0 0 2rem; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:1.5rem; margin-bottom:1.25rem; }
+  .card h2 { font-family:Georgia,serif; font-size:1.3rem; margin:0 0 1rem; }
+  .step { display:inline-block; background:var(--rose); color:#fff; font-size:.75rem; font-weight:700;
+    border-radius:999px; padding:.15rem .7rem; margin-bottom:.6rem; }
+  .pill { display:inline-block; background:#fce7f3; color:#a03568; font-size:.8rem; font-weight:600;
+    border-radius:999px; padding:.15rem .7rem; }
+  .score-hero-num { font-family:Georgia,serif; font-size:3rem; color:var(--rose); }
+  .concern-row { display:grid; grid-template-columns:1fr auto; gap:.3rem 1rem; padding:.5rem 0;
+    border-bottom:1px solid #faf3ea; align-items:center; }
+  .bar { height:7px; background:#f6ece1; border-radius:999px; overflow:hidden; grid-column:1/-1; }
+  .bar-fill { height:100%; border-radius:999px; }
+  .product-grid { display:grid; grid-template-columns:1fr 1fr; gap:.9rem; }
+  .product { border:1px solid var(--line); border-radius:12px; padding:1rem; background:#fffdf9; }
+  .product h4 { margin:0 0 .3rem; font-size:.95rem; }
+  .price { font-weight:700; color:var(--rose); }
+  .blurb { font-size:.82rem; color:var(--muted); margin:.3rem 0; }
+  .match { font-size:.78rem; color:var(--green); }
+  .routine-cols { display:grid; grid-template-columns:1fr 1fr; gap:1rem; }
+  .routine-cols ol { padding-left:1.2rem; font-size:.9rem; }
+  .tryon-box { display:grid; grid-template-columns:1fr 1fr 1fr; gap:.8rem; text-align:center; }
+  .ph { border:2px dashed var(--line); border-radius:12px; padding:2rem .5rem; color:var(--muted); font-size:.85rem; }
+  .cta { text-align:center; margin-top:1.5rem; }
+  .cta a { display:inline-block; background:var(--rose); color:#fff; text-decoration:none;
+    border-radius:10px; padding:.8rem 1.6rem; font-weight:700; }
+  footer { text-align:center; color:var(--muted); font-size:.8rem; margin-top:2rem; }
+  @media (max-width:600px){ .product-grid,.routine-cols{ grid-template-columns:1fr; } .tryon-box{ grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="sim-banner">Interactive showcase — simulated walkthrough with fixed example data. The live app runs the same flow on your own selfie via the YouCam API.</div>
+<main class="column">
+  <h1>GlowCart</h1>
+  <p class="tagline">Snap a selfie. <strong style="color:var(--rose)">Know your skin.</strong> Shop what actually works.</p>
+
+  <div class="card">
+    <span class="step">Step 1 — Analyze</span>
+    <h2>Your skin report <span class="pill">Skin type: Combination</span></h2>
+    <div><span class="score-hero-num">71</span> <span style="color:var(--muted); font-size:.85rem">SKIN SCORE</span></div>
+    <p style="color:var(--muted); font-size:.85rem">Healthy overall, with a few things to work on. · Powered by YouCam Skin AI (16 concerns)</p>
+    <h2 style="font-size:1.05rem">Focus areas</h2>
+    <div class="concern-row"><div><strong>Pores</strong></div><div><strong>52/100</strong></div>
+      <div class="bar"><div class="bar-fill" style="width:52%; background:#e8a13c"></div></div></div>
+    <div class="concern-row"><div><strong>Acne</strong></div><div><strong>58/100</strong></div>
+      <div class="bar"><div class="bar-fill" style="width:58%; background:#e8a13c"></div></div></div>
+    <div class="concern-row"><div><strong>Oiliness</strong></div><div><strong>61/100</strong></div>
+      <div class="bar"><div class="bar-fill" style="width:61%; background:#e8a13c"></div></div></div>
+  </div>
+
+  <div class="card">
+    <span class="step">Step 2 — Shop your skin</span>
+    <h2>Matched to your concerns</h2>
+    <div class="product-grid">
+      <div class="product"><h4>GlowLab 2% BHA Clarifying Serum</h4>
+        <div class="price">₹899 · 30 ml</div>
+        <p class="blurb">Salicylic acid unclogs pores and smooths rough texture.</p>
+        <p class="match">Matches: Pores, Acne</p></div>
+      <div class="product"><h4>GlowLab 10% Niacinamide Pore Serum</h4>
+        <div class="price">₹749 · 30 ml</div>
+        <p class="blurb">Refines pores and calms redness, balances oil.</p>
+        <p class="match">Matches: Pores, Oiliness</p></div>
+      <div class="product"><h4>GlowLab Invisible SPF 50 PA++++</h4>
+        <div class="price">₹699 · 50 ml</div>
+        <p class="blurb">Weightless daily UV shield — the #1 anti-aging step.</p>
+        <p class="match">Matches: Age spots, Radiance</p></div>
+      <div class="product"><h4>GlowLab Gentle Foam Cleanser</h4>
+        <div class="price">₹499 · 150 ml</div>
+        <p class="blurb">pH-balanced daily cleanse that clears pores without stripping.</p>
+        <p class="match">Matches: Acne, Oiliness</p></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <span class="step">Step 3 — Routine</span>
+    <h2>Your AM / PM routine</h2>
+    <div class="routine-cols">
+      <div><h3 style="font-size:1rem">Morning</h3>
+        <ol><li>GlowLab Gentle Foam Cleanser</li><li>GlowLab 10% Niacinamide Pore Serum</li>
+        <li>GlowLab Invisible SPF 50 PA++++</li></ol></div>
+      <div><h3 style="font-size:1rem">Night</h3>
+        <ol><li>GlowLab Gentle Foam Cleanser</li><li>GlowLab 2% BHA Clarifying Serum</li>
+        <li>GlowLab Hyaluronic Dew Moisturizer</li></ol></div>
+    </div>
+    <p>Routine total: <strong>₹3,845</strong></p>
+  </div>
+
+  <div class="card">
+    <span class="step">Step 4 — Try it on</span>
+    <h2>Apparel virtual try-on <span class="pill">YouCam cloth-v4</span></h2>
+    <div class="tryon-box">
+      <div class="ph">Your photo<br>(full-body)</div>
+      <div class="ph">Garment<br>photo</div>
+      <div class="ph" style="border-style:solid; border-color:var(--rose)">AI render<br>on you ✨</div>
+    </div>
+    <p style="color:var(--muted); font-size:.85rem">Live mode renders the garment on your photo via YouCam's cloth-v4 API. AI-generated imagery is for reference only.</p>
+  </div>
+
+  <div class="cta">
+    <a href="https://github.com/arindewangan/glowcart">Get GlowCart on GitHub</a>
+    <p style="color:var(--muted); font-size:.85rem;">Run it locally: <code>pip install -r requirements.txt &amp;&amp; python app.py</code></p>
+  </div>
+
+  <footer><p>GlowCart demo — sample catalog, illustrative prices. AI results for reference only, not medical advice.</p></footer>
+</main>
+</body>
+</html>
